@@ -1,0 +1,1 @@
+"The Les Mis Virus." I model how a virus might spread (SEIR model) using a network based on interactions between Les Mis characters (data from here: https://bl.ocks.org/heybignick/3faf257bbbbc7743bb72310d03b86ee8).
