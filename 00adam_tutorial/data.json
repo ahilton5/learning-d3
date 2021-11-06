@@ -1,0 +1,31 @@
+{
+    "colors": [
+        {
+            "color": "red",
+            "segments": [
+                { "start": 0, "stop": 4  },
+                { "start": 7, "stop": 20  },
+                { "start": 45, "stop": 60  },
+                { "start": 68, "stop": 71  },
+                { "start": 78, "stop": 81  }
+            ]
+        },
+        {
+            "color": "blue",
+            "segments": [
+                { "start": 4, "stop": 7  },
+                { "start": 20, "stop": 45  },
+                { "start": 60, "stop": 65  },
+                { "start": 81, "stop": 91  }
+            ]
+        },
+        {
+            "color": "green",
+            "segments": [
+                { "start": 65, "stop": 68  },
+                { "start": 71, "stop": 78  },
+                { "start": 91, "stop": 100  }
+            ]
+        }
+    ]
+}

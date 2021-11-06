@@ -1,0 +1,68 @@
+body {
+    box-sizing: border-box;
+    top: 0px;
+    left: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+
+#graphic {
+    border: solid 1px gray;
+}
+
+.button {
+    padding: 3px;
+    border: solid 1px gray;
+    background-color: rgb(238, 238, 238);
+}
+.button:hover {
+    background-color: rgb(245, 245, 245);
+}
+
+.bar {
+    fill: steelblue;
+}
+
+.bar:hover {
+    fill: rgb(49, 91, 126);
+}
+
+div.tooltip {	
+    position: absolute;			
+    text-align: center;			
+    /* width: 60px;					 */
+    /* height: 28px;					 */
+    padding: 5px;				
+    font: 12px sans-serif;		
+    /* background: lightsteelblue;	 */
+    background-color: rgb(216, 209, 177);
+    border: 0px;		
+    border-radius: 2px;			
+    pointer-events: none;			
+}
+
+.title {
+    text-align: center;
+    font-size: larger;
+    padding: 5px;
+}
+
+.page {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.circle {
+    fill: #69b3a2;
+}
+
+.circle:hover {
+    fill: #3b635a;
+}
+
+text {
+    font-size: larger;
+    color: black;
+    z-index: 10;
+}
