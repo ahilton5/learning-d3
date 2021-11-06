@@ -1,2 +1,1 @@
-# learning-d3
-My mini projects on my journal from novice to (hopefully soon) expert.  
+Code I was given as a tutorial. No original work on my part here.
