@@ -18,7 +18,7 @@ for edge in data['links']:
     neighbors[edge['source']].add((edge['target'], edge['value']))
     neighbors[edge['target']].add((edge['source'], edge['value']))
 
-ndays = 10
+ndays = 20
 tInc = 3
 tRec = 5
 
