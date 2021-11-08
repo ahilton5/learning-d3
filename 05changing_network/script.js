@@ -11,6 +11,12 @@ const svg = d3.select("#graphic")
     .append("g")
         .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
+const linkGroup = svg.append("g")
+    .attr("class", "links");
+
+const nodeGroup = svg.append("g")
+    .attr("class", "nodes");
+
 const color = {
     1: 'blue', // susceptible
     2: 'yellow', // exposed
@@ -24,7 +30,7 @@ output.innerHTML = slider.value;
 
 slider.oninput = function() {
   output.innerHTML = this.value;
-  drawNetwork(document.getElementById('starter').value, this.value);
+  recolor(document.getElementById('starter').value, this.value);
 }
 
 var networkData;
@@ -43,24 +49,31 @@ document.addEventListener('input', function (event) {
 }, false);
 
 
-function drawNetwork(starter, day) {
-    // Initialize the links
-    svg.selectAll('g').remove();  
-    const link = svg.append("g")
-        .attr("class", "links")
-        .selectAll("line")
-        .data(networkData[starter].links)
-        .join("line")
-        .style("stroke", "#aaa")
-        // Scale the width of the edge by the edge strength
-        // sqrt to make the width grow slower (linear is too much)
-        .attr("stroke-width", function(d) { return Math.sqrt(d.value); });
+function recolor(starter, day) {
+    console.log(starter, day);
+    const node = nodeGroup.selectAll("g")
+        .data(networkData[starter].nodes);
+    node.selectAll("circle")
+            .attr('class', 'circle')
+            .attr("r", 7)
+            .attr('fill', d => color[d.groups[day]]); 
+}
 
-    
+function drawNetwork(starter, day) {
+    linkGroup.selectAll('line').remove();
+    nodeGroup.selectAll('g').remove();  
+
+    // Initialize the links
+    const link = linkGroup.selectAll("line")
+        .data(networkData[starter].links)
+        .enter().append("line")
+            .style("stroke", "#aaa")
+            // Scale the width of the edge by the edge strength
+            // sqrt to make the width grow slower (linear is too much)
+            .attr("stroke-width", function(d) { return Math.sqrt(d.value); });
+            
     // Initialize the nodes
-    const node = svg.append("g")
-        .attr("class", "nodes")
-        .selectAll("g")
+    const node = nodeGroup.selectAll("g")
         .data(networkData[starter].nodes)
         .enter().append("g");
 
@@ -92,7 +105,7 @@ function drawNetwork(starter, day) {
 
     node.append("title") // The title attribute is displayed on hover.
         .text(d => d.id);
-
+    
     function dragStarted(event, d) {
         if (!event.active) simulation.alphaTarget(0.3).restart();
         d.fx = d.x;
