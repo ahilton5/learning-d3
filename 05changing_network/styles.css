@@ -27,15 +27,16 @@ body {
     fill: rgb(49, 91, 126);
 }
 
-/* #graphic {
-    border: 1px solid black;
-} */
+#graphic {
+    box-shadow: 0 0 5px black inset;
+    /* margin-right: 10px; */
+}
 
 #sim {
     /* border: 1px solid black; */
     height: 600px;
     width: 600px;
-    padding: 10px;
+    padding: 20px;
 }
 
 h1 {

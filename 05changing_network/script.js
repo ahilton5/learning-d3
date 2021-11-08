@@ -28,27 +28,29 @@ const slider = document.getElementById("myRange");
 var output = document.getElementById("demo");
 output.innerHTML = slider.value;
 
+// Listener for the slider
 slider.oninput = function() {
   output.innerHTML = this.value;
   recolor(document.getElementById('starter').value, this.value);
 }
 
+// Request the json data, save as global, then draw network.
 var networkData;
 d3.json('sim.json').then( function(data) {
     networkData = data;
     drawNetwork(document.getElementById('starter').value, slider.value); 
 });
 
+// Listener for the dropdown selector
 document.addEventListener('input', function (event) {
-
 	// Only run on our select menu
 	if (event.target.id !== 'starter') return;
 
 	drawNetwork(document.getElementById('starter').value, slider.value); 
-
 }, false);
 
-
+// Function for recoloring nodes.
+// Does not redraw the entire network.
 function recolor(starter, day) {
     console.log(starter, day);
     const node = nodeGroup.selectAll("g")
