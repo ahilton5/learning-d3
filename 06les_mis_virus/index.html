@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Les Mis Virus</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://d3js.org/d3.v6.min.js"></script>
+    </head>
+    <body>
+        <h1>The Les Mis Virus</h1>
+        <div class="page">
+            <div class='graphics' id='graphic'></div>
+            <div id='sim'>
+                <p>The SEIR Model:</p>
+                <ul>
+                    <li>Susceptible (blue)</li>
+                    <li>Exposed (yellow)</li>
+                    <li>Infectious (red)</li>
+                    <li>Recovered (green)</li>
+                </ul>
+                <hr>
+                <p>Who starts sick?</p>
+                <select name="starter" id="starter">
+                    <option value="Valjean">Valjean (highly connected)</option>
+                    <option value="Gribier">Gribier (only 1 connection)</option>
+                  </select>
+                <hr>
+                <p>Simulation timeline</p>
+                <div class="slidecontainer">
+                    <input type="range" min="0" max="20" value="0" class="slider" id="myRange">
+                    <p>Day: <span id="demo"></span></p>
+                </div>
+                <hr>
+                <div class='graphics' id='linegraph'></div>
+            </div>
+        </div>
+        <script src="script.js" type="text/javascript"></script>
+        <script src="linegraph.js" type="text/javascript"></script>
+    </body>
+</html>
