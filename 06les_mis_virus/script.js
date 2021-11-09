@@ -6,15 +6,15 @@ const color = {
 }
 
 const slider = document.getElementById("myRange");
-var output = document.getElementById("demo");
+var output = document.getElementById("day");
 output.innerHTML = slider.value;
 
 // Request the json data then draw graphs
 var network;
 var linegraph;
 d3.json('sim.json').then( function(data) {
-    network = new Network(600, 600, '#graphic', data);
-    linegraph = new Linegraph(parseInt(d3.select('#linegraph').style('width')), 200, '#linegraph', data);
+    network = new Network(document.querySelector('#graphic').offsetWidth, 600, '#graphic', data);
+    linegraph = new Linegraph(parseInt(d3.select('#linegraph').style('width')), 225, '#linegraph', data);
 
     let starter = document.getElementById('starter').value;
     let day = slider.value;

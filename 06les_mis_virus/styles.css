@@ -29,11 +29,10 @@ body {
 
 .graphics {
     box-shadow: 0 0 5px black inset;
-    /* margin-right: 10px; */
+    min-width: 600px;
 }
 
 #sim {
-    /* border: 1px solid black; */
     height: 600px;
     width: 600px;
     padding: 20px;
@@ -49,6 +48,7 @@ h1 {
     justify-content: center;
     flex-wrap: wrap;
     margin: auto;
+    margin-bottom: 50px;
 }
 
 .circle:hover {

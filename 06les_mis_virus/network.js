@@ -4,8 +4,8 @@ class Network {
         this.width = width - this.margin.left - this.margin.right;
         this.height = height - this.margin.top - this.margin.bottom;
         this.svg = d3.select(svgID).append("svg")
-            .attr("width", width + this.margin.left + this.margin.right)
-            .attr("height", height + this.margin.top + this.margin.bottom)
+            .attr("width", this.width + this.margin.left + this.margin.right)
+            .attr("height", this.height + this.margin.top + this.margin.bottom)
             .append("g")
             .attr("transform", `translate(${this.margin.left}, ${this.margin.top})`);
         this.linkGroup = this.svg.append("g")
